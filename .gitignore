@@ -1,0 +1,32 @@
+# === Secrets (NUNCA commitear) ===
+.env
+.env.*
+*.pem
+*.key
+secrets/
+.secrets/
+credentials*.json
+
+# === Databases / data reales ===
+*.db
+*.duckdb
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.csv
+*.parquet
+data/*.json
+!data/sample_*.json
+
+# === Python ===
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# === OS ===
+.DS_Store
+Thumbs.db
