@@ -67,6 +67,10 @@ Fix: existence questions must hit the live primary source (see
    "category totals never exceed the population", "populations never mixed".
 4. **CI that runs the tests on every push** (`.github/workflows/ci.yml`) — the
    truth layer audits itself.
+5. **Red-team every material number before it ships** (`docs/RED_TEAM.md`) — a
+   repeatable skeptic's method (right field, two sources, row-level, hostile
+   adversary pass) so a wrong number gets caught *before* leadership sees it,
+   not after.
 
 ## Architecture
 
@@ -96,6 +100,7 @@ See `docs/ARCHITECTURE.md` for the full diagram and reasoning.
 | `docs/DATA_CONTRACT.md` | Which source answers which question (snapshot vs primary) |
 | `docs/COUNTING_RULES.md` | How to count people without double-counting or mixing populations |
 | `docs/ARCHITECTURE.md`   | System diagram and design decisions |
+| `docs/RED_TEAM.md`       | How to break your own number before someone else does |
 | `models/`                | Example SQL models |
 | `tests/`                 | Data-quality tests that enforce the rules |
 | `.github/workflows/`     | CI that runs the tests on every push |
