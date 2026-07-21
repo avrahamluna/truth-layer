@@ -28,6 +28,34 @@ Typical failure modes (all real, all seen in production):
   lags reality; using it to answer "does this customer exist?" produces false
   negatives that cost money.
 
+## Case studies (why this matters)
+
+Real problems this methodology caught in production — anonymized, numbers
+rounded, no customer data. These are the kind of errors the tests in this repo
+exist to prevent.
+
+### 1. Population mixing inflated a count ~4.5x
+A report counted **18,869** "at-risk customers" — the real number was **4,172**.
+Cause: one tab counted rows from a table with duplicates per customer instead of
+`COUNT(DISTINCT customer_id)`. The single-population CTE + the
+`category_totals_never_exceed_population` test would have failed the build.
+
+### 2. Margin reported 64%, actual was 43%
+A P&L showed a **64%** gross margin. The real figure was **43%** — a 21-point
+gap. Cause: cost of goods was applied as a flat rate instead of the real
+per-order cost. Lesson: a number that flatters you is the one to attack first.
+
+### 3. A ~$46K "phantom gap" that didn't exist
+Reconciliation flagged ~**$46K** owed that looked like a real discrepancy. It
+wasn't: the check queried an aggregate *snapshot* that lagged the cutoff and
+omitted the newest records, so present-but-recent items read as "missing."
+Fix: existence questions must hit the live primary source (see
+`docs/DATA_CONTRACT.md`, Rule #0).
+
+> The pattern across all three: the bug isn't in the SQL syntax — it's in the
+> **definition**. What are we counting, from where, with what filter. This repo
+> encodes those definitions as rules and enforces them as tests.
+
 ## The approach
 
 1. **Contract first** (`docs/DATA_CONTRACT.md`) — one document that says which
@@ -39,6 +67,10 @@ Typical failure modes (all real, all seen in production):
    "category totals never exceed the population", "populations never mixed".
 4. **CI that runs the tests on every push** (`.github/workflows/ci.yml`) — the
    truth layer audits itself.
+5. **Red-team every material number before it ships** (`docs/RED_TEAM.md`) — a
+   repeatable skeptic's method (right field, two sources, row-level, hostile
+   adversary pass) so a wrong number gets caught *before* leadership sees it,
+   not after.
 
 ## Architecture
 
@@ -68,6 +100,7 @@ See `docs/ARCHITECTURE.md` for the full diagram and reasoning.
 | `docs/DATA_CONTRACT.md` | Which source answers which question (snapshot vs primary) |
 | `docs/COUNTING_RULES.md` | How to count people without double-counting or mixing populations |
 | `docs/ARCHITECTURE.md`   | System diagram and design decisions |
+| `docs/RED_TEAM.md`       | How to break your own number before someone else does |
 | `models/`                | Example SQL models |
 | `tests/`                 | Data-quality tests that enforce the rules |
 | `.github/workflows/`     | CI that runs the tests on every push |
