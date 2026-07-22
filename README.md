@@ -74,24 +74,11 @@ Fix: existence questions must hit the live primary source (see
 
 ## Architecture
 
-```
-   ┌────────────┐   ┌────────────┐   ┌──────────────┐
-   │  payments  │   │  app / CRM │   │ ad / affiliate│   sources
-   └─────┬──────┘   └─────┬──────┘   └──────┬───────┘
-         │                │                 │
-         └────────┬───────┴────────┬────────┘
-                  ▼                 ▼
-          ┌───────────────────────────────┐
-          │   reconciliation + contract    │   truth layer
-          │   (one population, one method) │
-          └───────────────┬───────────────┘
-                          │
-             ┌────────────┼────────────┐
-             ▼            ▼            ▼
-        dashboards    reports     automated audits
-```
+![Architecture](docs/architecture.png)
 
-See `docs/ARCHITECTURE.md` for the full diagram and reasoning.
+Three contradictory sources go in; one reconciled, contract-governed layer
+comes out, and its data-quality tests run in CI on every push. See
+`docs/ARCHITECTURE.md` for the reasoning behind each decision.
 
 ## Layout
 
