@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="370" viewBox="0 0 830 370" font-family="-apple-system, system-ui, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg{fill:#0f172a}
+      .title{fill:#e2e8f0;font-size:20px;font-weight:700}
+      .sub{fill:#94a3b8;font-size:12px}
+      .src{fill:#1e293b;stroke:#334155;stroke-width:1.5}
+      .srcT{fill:#e2e8f0;font-size:13px;font-weight:600}
+      .srcS{fill:#94a3b8;font-size:10px}
+      .core{fill:#0c4a6e;stroke:#38bdf8;stroke-width:2}
+      .coreT{fill:#38bdf8;font-size:15px;font-weight:700}
+      .coreS{fill:#bae6fd;font-size:11px}
+      .cons{fill:#1e293b;stroke:#334155;stroke-width:1.5}
+      .consT{fill:#e2e8f0;font-size:12px;font-weight:600}
+      .edge{stroke:#64748b;stroke-width:1.5;fill:none}
+      .lbl{fill:#f472b6;font-size:10px;font-weight:600}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="830" height="370" rx="14"/>
+  <text class="title" x="30" y="42">truth-layer</text>
+  <text class="sub" x="30" y="62">one reconciled source of truth from contradictory systems</text>
+
+  <!-- Sources -->
+  <text class="srcS" x="70" y="100" fill="#64748b" font-weight="700">SOURCES</text>
+  <g>
+    <rect class="src" x="30" y="110" width="150" height="54" rx="9"/>
+    <text class="srcT" x="46" y="136">payments</text>
+    <text class="srcS" x="46" y="152">charges · refunds · disputes</text>
+  </g>
+  <g>
+    <rect class="src" x="30" y="180" width="150" height="54" rx="9"/>
+    <text class="srcT" x="46" y="206">app / CRM</text>
+    <text class="srcS" x="46" y="222">orders · plans · signups</text>
+  </g>
+  <g>
+    <rect class="src" x="30" y="250" width="150" height="54" rx="9"/>
+    <text class="srcT" x="46" y="276">ad / affiliate</text>
+    <text class="srcS" x="46" y="292">clicks · conversions</text>
+  </g>
+
+  <!-- Core -->
+  <rect class="core" x="300" y="140" width="220" height="140" rx="12"/>
+  <text class="coreT" x="330" y="178">truth layer</text>
+  <text class="coreS" x="330" y="202">• reconcile (intersection)</text>
+  <text class="coreS" x="330" y="222">• one population, one method</text>
+  <text class="coreS" x="330" y="242">• snapshot vs primary</text>
+  <text class="coreS" x="330" y="262">• rules enforced as tests</text>
+
+  <!-- Consumers -->
+  <text class="srcS" x="650" y="100" fill="#64748b" font-weight="700">CONSUMERS</text>
+  <g>
+    <rect class="cons" x="620" y="110" width="180" height="46" rx="9"/>
+    <text class="consT" x="636" y="138">dashboards</text>
+  </g>
+  <g>
+    <rect class="cons" x="620" y="172" width="180" height="46" rx="9"/>
+    <text class="consT" x="636" y="200">reports</text>
+  </g>
+  <g>
+    <rect class="cons" x="620" y="234" width="180" height="46" rx="9"/>
+    <text class="consT" x="636" y="262">automated audits</text>
+  </g>
+
+  <!-- Edges: sources -> core -->
+  <path class="edge" d="M180,137 C240,137 250,190 298,196" marker-end="url(#arrow)"/>
+  <path class="edge" d="M180,207 L298,210" marker-end="url(#arrow)"/>
+  <path class="edge" d="M180,277 C240,277 250,230 298,224" marker-end="url(#arrow)"/>
+
+  <!-- Edges: core -> consumers -->
+  <path class="edge" d="M520,180 C570,180 575,133 618,133" marker-end="url(#arrow)"/>
+  <path class="edge" d="M520,210 C570,210 575,195 618,195" marker-end="url(#arrow)"/>
+  <path class="edge" d="M520,240 C570,240 575,257 618,257" marker-end="url(#arrow)"/>
+
+  <!-- CI badge under core -->
+  <g>
+    <rect x="300" y="300" width="220" height="40" rx="9" fill="#052e16" stroke="#22c55e" stroke-width="1.5"/>
+    <circle cx="322" cy="320" r="5" fill="#22c55e"/>
+    <text x="336" y="325" fill="#86efac" font-size="12" font-weight="600">CI: data-quality tests pass on every push</text>
+  </g>
+  <path class="edge" d="M410,280 L410,298" marker-end="url(#arrow)"/>
+
+  <text class="lbl" x="205" y="200">reconcile</text>
+  <text class="lbl" x="548" y="150">serve</text>
+</svg>
