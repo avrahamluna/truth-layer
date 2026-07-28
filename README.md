@@ -1,5 +1,8 @@
 # truth-layer
 
+[![CI](https://github.com/avrahamluna/truth-layer/actions/workflows/ci.yml/badge.svg)](https://github.com/avrahamluna/truth-layer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A **single source of truth** layer for businesses whose data lives across
 multiple systems (a payments processor, an internal app/CRM, an ad/affiliate
 platform) and who no longer trust their own numbers.
