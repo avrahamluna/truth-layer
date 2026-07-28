@@ -94,12 +94,35 @@ comes out, and its data-quality tests run in CI on every push. See
 | `tests/`                 | Data-quality tests that enforce the rules |
 | `.github/workflows/`     | CI that runs the tests on every push |
 
-## Run the tests
+## Quick start
 
 ```bash
 pip install -r requirements.txt
-pytest -q
+python scripts/build_sample_db.py   # generate a small demo database
+pytest -q                          # run the data-quality tests
 ```
+
+Expected output:
+
+```
+....                                                          [100%]
+4 passed in 0.03s
+```
+
+The tests encode the counting rules as executable checks — if a query violates
+"one population, one method" or double-counts customers, the build fails.
+
+## What this demonstrates
+
+- **Data contracts** — a single document that governs which source answers which
+  question, and when to trust the primary source over a snapshot.
+- **Reconciliation across systems** — unifying payments, app/CRM, and affiliate
+  data into one auditable population instead of three contradictory counts.
+- **Data-quality testing** — rules encoded as `pytest` checks, not tribal
+  knowledge, so definitions are enforced instead of assumed.
+- **CI/CD for data** — every push runs the checks; the truth layer audits itself.
+- **Analytical rigor** — a repeatable red-team method to break a number before
+  it reaches a decision-maker.
 
 ## Note on data
 
