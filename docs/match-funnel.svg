@@ -44,8 +44,11 @@
   </g>
   <text x="150" y="382" text-anchor="middle" fill="#5b6478" font-size="11.5">131K raw records</text>
 
-  <!-- connector into funnel -->
-  <path d="M 260 252 C 300 252, 300 300, 340 300" fill="none" stroke="#22d3ee" stroke-width="2" marker-end="url(#fArrow)"/>
+  <!-- connectors into funnel: all three sources converge -->
+  <path d="M 260 180 C 300 180, 312 260, 336 288" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.75"/>
+  <path d="M 260 252 C 300 252, 312 280, 336 292" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.75"/>
+  <path d="M 260 324 C 300 324, 312 300, 336 296" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-opacity="0.75"/>
+  <path d="M 330 292 L 356 292" fill="none" stroke="#22d3ee" stroke-width="2" marker-end="url(#fArrow)"/>
 
   <!-- ===== FUNNEL (center) ===== -->
   <text x="620" y="126" text-anchor="middle" fill="#6b7280" font-size="12.5" font-weight="600" letter-spacing="2">MATCH TIERS</text>
