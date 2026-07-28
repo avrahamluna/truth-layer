@@ -5,7 +5,6 @@ multiple systems (a payments processor, an internal app/CRM, an ad/affiliate
 platform) and who no longer trust their own numbers.
 
 > Generalized from a production system I designed and operated (2025–2026) that
-> unified 3+ data sources into one reconciled, auditable layer. All names,
 > unified 3+ data sources into one reconciled, auditable layer.
 
 ---
@@ -102,5 +101,4 @@ pytest -q
 ## Note on data
 
 This repo demonstrates the *methodology* and *engineering practices* of a real
-*engineering practices* of a real production system without exposing any
-customer data, credentials, or business-specific figures.
+production system.

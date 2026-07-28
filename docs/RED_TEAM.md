@@ -10,7 +10,7 @@ with the same hostility a skeptical stakeholder will — but privately, first, s
 the public answer is already bulletproof.
 
 > The failure patterns below are real; the names, figures, and schemas have been
-> real; the names, figures, and schemas are invented.
+> generalized.
 
 ---
 
