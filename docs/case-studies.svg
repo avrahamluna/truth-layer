@@ -47,9 +47,9 @@
   <text x="66" y="398" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUSE</text>
   <text x="66" y="420" fill="#cbd5e1" font-size="13">COUNT(*) on a table with</text>
   <text x="66" y="438" fill="#cbd5e1" font-size="13">duplicates per customer</text>
-  <text x="66" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUGHT BY</text>
-  <text x="66" y="492" fill="#22d3ee" font-size="12.5" font-family="monospace">category_totals_never_</text>
-  <text x="66" y="508" fill="#22d3ee" font-size="12.5" font-family="monospace">exceed_population</text>
+  <text x="66" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">FIX</text>
+  <text x="66" y="492" fill="#e2e8f0" font-size="12.5">Count DISTINCT customers; a test</text>
+  <text x="66" y="508" fill="#e2e8f0" font-size="12.5">now caps category ≤ population</text>
 
   <!-- ============ CARD 2: margin ============ -->
   <g filter="url(#soft)">
@@ -78,9 +78,9 @@
   <text x="440" y="398" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUSE</text>
   <text x="440" y="420" fill="#cbd5e1" font-size="13">Cost of goods applied as a</text>
   <text x="440" y="438" fill="#cbd5e1" font-size="13">flat rate, not per-order cost</text>
-  <text x="440" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">LESSON</text>
-  <text x="440" y="492" fill="#e2e8f0" font-size="12.5">The number that flatters you</text>
-  <text x="440" y="508" fill="#e2e8f0" font-size="12.5">is the one to attack first</text>
+  <text x="440" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">FIX</text>
+  <text x="440" y="492" fill="#e2e8f0" font-size="12.5">Apply real per-order cost of</text>
+  <text x="440" y="508" fill="#e2e8f0" font-size="12.5">goods, not a flat rate</text>
 
   <!-- ============ CARD 3: phantom gap ============ -->
   <g filter="url(#soft)">
