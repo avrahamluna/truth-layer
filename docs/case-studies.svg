@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <linearGradient id="badBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b9d"/>
+      <stop offset="1" stop-color="#c2185b"/>
+    </linearGradient>
+    <linearGradient id="goodBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1180" height="560" fill="#0a0e17"/>
+
+  <!-- title -->
+  <text x="590" y="48" text-anchor="middle" fill="#f1f5f9" font-size="26" font-weight="700">What the truth layer caught</text>
+  <text x="590" y="74" text-anchor="middle" fill="#8b93a7" font-size="14.5">Three production errors — the reported number vs. the real one</text>
+
+  <!-- ============ CARD 1: population mixing ============ -->
+  <g filter="url(#soft)">
+    <rect x="40" y="108" width="352" height="404" rx="14" fill="#111827" stroke="#2b3648" stroke-width="1.3"/>
+  </g>
+  <rect x="40" y="108" width="352" height="4" rx="2" fill="#ff6b9d"/>
+  <text x="66" y="146" fill="#e2e8f0" font-size="17" font-weight="700">Population mixing</text>
+  <text x="66" y="168" fill="#7c869c" font-size="12.5">"At-risk customers" count</text>
+
+  <!-- badge -->
+  <g>
+    <rect x="286" y="126" width="82" height="26" rx="13" fill="#3a0f22" stroke="#ff6b9d" stroke-width="1"/>
+    <text x="327" y="143" text-anchor="middle" fill="#ff6b9d" font-size="12.5" font-weight="700">4.5× inflated</text>
+  </g>
+
+  <!-- bars -->
+  <text x="66" y="212" fill="#ff6b9d" font-size="12.5" font-weight="600">REPORTED</text>
+  <rect x="66" y="222" width="300" height="34" rx="6" fill="url(#badBar)"/>
+  <text x="80" y="244" fill="#ffffff" font-size="17" font-weight="700">18,869</text>
+
+  <text x="66" y="292" fill="#4ade80" font-size="12.5" font-weight="600">ACTUAL</text>
+  <rect x="66" y="302" width="66" height="34" rx="6" fill="url(#goodBar)"/>
+  <text x="142" y="324" fill="#4ade80" font-size="17" font-weight="700">4,172</text>
+
+  <!-- cause -->
+  <line x1="66" y1="372" x2="366" y2="372" stroke="#1f2937" stroke-width="1"/>
+  <text x="66" y="398" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUSE</text>
+  <text x="66" y="420" fill="#cbd5e1" font-size="13">COUNT(*) on a table with</text>
+  <text x="66" y="438" fill="#cbd5e1" font-size="13">duplicates per customer</text>
+  <text x="66" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">FIX</text>
+  <text x="66" y="492" fill="#e2e8f0" font-size="12.5">Count DISTINCT customers; a test</text>
+  <text x="66" y="508" fill="#e2e8f0" font-size="12.5">now caps category ≤ population</text>
+
+  <!-- ============ CARD 2: margin ============ -->
+  <g filter="url(#soft)">
+    <rect x="414" y="108" width="352" height="404" rx="14" fill="#111827" stroke="#2b3648" stroke-width="1.3"/>
+  </g>
+  <rect x="414" y="108" width="352" height="4" rx="2" fill="#ff6b9d"/>
+  <text x="440" y="146" fill="#e2e8f0" font-size="17" font-weight="700">Margin overstated</text>
+  <text x="440" y="168" fill="#7c869c" font-size="12.5">Reported gross margin</text>
+
+  <g>
+    <rect x="668" y="126" width="72" height="26" rx="13" fill="#3a0f22" stroke="#ff6b9d" stroke-width="1"/>
+    <text x="704" y="143" text-anchor="middle" fill="#ff6b9d" font-size="12.5" font-weight="700">21-pt gap</text>
+  </g>
+
+  <!-- bars -->
+  <text x="440" y="212" fill="#ff6b9d" font-size="12.5" font-weight="600">REPORTED</text>
+  <rect x="440" y="222" width="300" height="34" rx="6" fill="url(#badBar)"/>
+  <text x="454" y="244" fill="#ffffff" font-size="17" font-weight="700">64%</text>
+
+  <text x="440" y="292" fill="#4ade80" font-size="12.5" font-weight="600">ACTUAL</text>
+  <rect x="440" y="302" width="202" height="34" rx="6" fill="url(#goodBar)"/>
+  <text x="454" y="324" fill="#052e16" font-size="17" font-weight="700">43%</text>
+
+  <!-- cause -->
+  <line x1="440" y1="372" x2="740" y2="372" stroke="#1f2937" stroke-width="1"/>
+  <text x="440" y="398" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUSE</text>
+  <text x="440" y="420" fill="#cbd5e1" font-size="13">Cost of goods applied as a</text>
+  <text x="440" y="438" fill="#cbd5e1" font-size="13">flat rate, not per-order cost</text>
+  <text x="440" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">FIX</text>
+  <text x="440" y="492" fill="#e2e8f0" font-size="12.5">Apply real per-order cost of</text>
+  <text x="440" y="508" fill="#e2e8f0" font-size="12.5">goods, not a flat rate</text>
+
+  <!-- ============ CARD 3: phantom gap ============ -->
+  <g filter="url(#soft)">
+    <rect x="788" y="108" width="352" height="404" rx="14" fill="#111827" stroke="#2b3648" stroke-width="1.3"/>
+  </g>
+  <rect x="788" y="108" width="352" height="4" rx="2" fill="#ff6b9d"/>
+  <text x="814" y="146" fill="#e2e8f0" font-size="17" font-weight="700">Phantom gap</text>
+  <text x="814" y="168" fill="#7c869c" font-size="12.5">Reconciliation "money owed"</text>
+
+  <g>
+    <rect x="1024" y="126" width="90" height="26" rx="13" fill="#3a0f22" stroke="#ff6b9d" stroke-width="1"/>
+    <text x="1069" y="143" text-anchor="middle" fill="#ff6b9d" font-size="12.5" font-weight="700">didn't exist</text>
+  </g>
+
+  <!-- bars -->
+  <text x="814" y="212" fill="#ff6b9d" font-size="12.5" font-weight="600">FLAGGED</text>
+  <rect x="814" y="222" width="300" height="34" rx="6" fill="url(#badBar)"/>
+  <text x="828" y="244" fill="#ffffff" font-size="17" font-weight="700">~$46K</text>
+
+  <text x="814" y="292" fill="#4ade80" font-size="12.5" font-weight="600">ACTUAL</text>
+  <rect x="814" y="302" width="16" height="34" rx="6" fill="url(#goodBar)"/>
+  <text x="840" y="324" fill="#4ade80" font-size="17" font-weight="700">$0</text>
+
+  <!-- cause -->
+  <line x1="814" y1="372" x2="1114" y2="372" stroke="#1f2937" stroke-width="1"/>
+  <text x="814" y="398" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">CAUSE</text>
+  <text x="814" y="420" fill="#cbd5e1" font-size="13">Existence check hit a lagging</text>
+  <text x="814" y="438" fill="#cbd5e1" font-size="13">snapshot, not the live source</text>
+  <text x="814" y="470" fill="#6b7280" font-size="11.5" font-weight="600" letter-spacing="1">FIX</text>
+  <text x="814" y="492" fill="#e2e8f0" font-size="12.5">Existence questions must hit</text>
+  <text x="814" y="508" fill="#e2e8f0" font-size="12.5">the live primary (Rule #0)</text>
+
+  <!-- footer -->
+  <text x="590" y="546" text-anchor="middle" fill="#5b6478" font-size="11.5">Each error was a definition bug, not a syntax bug — and each is now enforced as a test that fails the build</text>
+</svg>
